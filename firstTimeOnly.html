@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./_assets/plugin/bootstrap-5.0.2-dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./_assets/plugin/bootstrap-5.0.2-dist/css/bootstrap-utilities.min.css">
+
+    <!-- prism CSS -->
+    <link rel="stylesheet" href="./_assets/plugin/prism/prism.css">
+
+    <!-- Pages CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/pages/documents.css">
+
+    <!-- document CSS -->
+    <link rel="stylesheet" href="./css/components/module/modal.css">
+
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/http-vue-loader"></script>
+
+    <!-- prism js -->
+    <script src="./_assets/plugin/prism/prism.js" defer></script>
+
+    <title>firstTimeOnly</title>
+  </head>
+  <body class="single document">
+    <div id="app">
+      <div class="l-twoColumn container-xxl">
+        <div class="l-twoColumn-sidebar">
+          <my-aside></my-aside>
+        </div>
+        <div class="l-twoColumn-main l-document">
+          <div class="l-document-toc">
+            <my-toc></my-toc>
+          </div>
+          <div class="l-document-article">
+            <h1 class="mb-4">firstTimeOnly</h1>
+            <p><a href="cookie.html">Cookie</a>と<a href="modal.html">Modal</a>のモジュールを組み合わせ、初回のみ発生するモーダルを作成します。</p>
+            <h2 class="mt-5">Live demo</h2>
+            <div class="demo">
+              <p><span id="cookieText"></span>回目の訪問です<br>※2回目以降は何も表示されない為、シークレットモードで閲覧してください。</p>
+              <button class="btn btn-lg btn-primary" type="button" data-toggle="modal" data-target="#modal_sample" id="button_sample" style="display:none">モーダルを開く</button>
+              <!-- .modal -->
+              <div class="modal" id="modal_sample" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="modal-close" data-dismiss="#modal_sample">×</button>
+                      <h4 class="modal-title">Title</h4>
+                    </div>
+                    <div class="modal-body">
+                      <p class="modal-p">初回のみモーダルを自動表示</p>
+                    </div>
+                    <div class="modal-footer">
+                      <div class="modal-button">
+                        <button type="button" class="btn btn-primary" data-dismiss="#modal_sample">はい</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="#modal_sample">いいえ</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.modal -->
+            </div>
+            <pre><code class="language-html">&lt;button class=&quot;btn btn-lg btn-primary&quot; type=&quot;button&quot; data-toggle=&quot;modal&quot; data-target=&quot;#modal_sample&quot; id=&quot;button_sample&quot; style=&quot;display:none&quot;&gt;モーダルを開く&lt;/button&gt;
+&lt;!-- .modal --&gt;
+&lt;div class=&quot;modal&quot; id=&quot;modal_sample&quot; aria-hidden=&quot;true&quot;&gt;
+  &lt;div class=&quot;modal-dialog&quot;&gt;
+    &lt;div class=&quot;modal-content&quot;&gt;
+      &lt;div class=&quot;modal-header&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;modal-close&quot; data-dismiss=&quot;#modal_sample&quot;&gt;&times;&lt;/button&gt;
+        &lt;h4 class=&quot;modal-title&quot;&gt;Title&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-body&quot;&gt;
+        &lt;p class=&quot;modal-p&quot;&gt;初回のみモーダルを自動表示&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;modal-footer&quot;&gt;
+        &lt;div class=&quot;modal-button&quot;&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; data-dismiss=&quot;#modal_sample&quot;&gt;はい&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot; data-dismiss=&quot;#modal_sample&quot;&gt;いいえ&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- /.modal --&gt;</code></pre>
+            <pre><code class="language-javascript">import { cookie } from "./module/cookie.js"
+import { modal } from "./module/modal.js"
+let counter = cookie(120)
+
+window.addEventListener("DOMContentLoaded", function(){
+  if(counter == 1) {
+    document.getElementById('button_sample').click()
+  }
+})</code></pre>
+          </div>
+        </div>
+      </div>
+      <my-footer></my-footer>
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- <script src="./_assets/plugin/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script> -->
+
+    <!-- Optional JavaScript;-->
+    <script src="./js/documents.js"></script>
+    <script src="./js/firstTimeOnly.js" type="module"></script>
+  </body>
+</html>

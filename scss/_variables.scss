@@ -1,0 +1,35 @@
+@use "functions" as *;
+
+// Colors
+$base-1: #0c1e4a;
+$main-1: #0F0E9F;
+$accent-1: #3c66c9;
+
+$base-1-colorMap: generateColorMap-lightness($base-1) !default;
+$base-1-alpha: generateColorMap-alpha($base-1) !default;
+
+$main-1-colorMap: generateColorMap-lightness($main-1) !default;
+$main-1-alpha: generateColorMap-alpha($main-1) !default;
+
+$accent-1-colorMap: generateColorMap-lightness($accent-1) !default;
+$accent-1-alpha: generateColorMap-alpha($accent-1) !default;
+
+//breakpoints(Bootstrap)
+$breakpoints: (
+  "xxs": 375px,
+  "xs" : 414px,
+  "sm" : 576px,
+  "md" : 768px,
+  "lg" : 992px,
+  "xl" : 1200px,
+  "xxl": 1400px,
+);
+
+$breakpoints_iphone: (
+  'xs' : 568px, //5/5s/SE(第1世代)　
+  'sm' : 667px, //6/6s/7/8/ X/XS/11 Pro	
+  'md' : 736px, //Plus 6/6s/7/8
+  'lg' : 896px, //XR/11/XS Max/11 Pro Max
+  'xl' : 844px, //12/12 Pro/13/13Pro
+  'xxl': 926px  //12 Pro Max/13 Pro Max
+);

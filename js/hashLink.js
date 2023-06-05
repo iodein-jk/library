@@ -1,0 +1,1 @@
+import { hashLink } from "./module/hashLink.js"

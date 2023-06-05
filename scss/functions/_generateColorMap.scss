@@ -1,0 +1,52 @@
+// Shiozawa
+@use "sass:color";
+
+@function lightness($color) {
+  $colors: (
+    100: color.change($color, $lightness: 90%),
+    150: color.change($color, $lightness: 85%),
+    200: color.change($color, $lightness: 80%),
+    250: color.change($color, $lightness: 75%),
+    300: color.change($color, $lightness: 70%),
+    350: color.change($color, $lightness: 65%),
+    400: color.change($color, $lightness: 60%),
+    450: color.change($color, $lightness: 55%),
+    500: color.change($color, $lightness: 50%),
+    550: color.change($color, $lightness: 45%),
+    600: color.change($color, $lightness: 40%),
+    650: color.change($color, $lightness: 35%),
+    700: color.change($color, $lightness: 30%),
+    750: color.change($color, $lightness: 25%),
+    800: color.change($color, $lightness: 20%),
+    850: color.change($color, $lightness: 15%),
+    900: color.change($color, $lightness: 10%),
+  );
+
+  @return $colors;
+}
+
+@function alpha($color) {
+  $colors: (
+    100: color.change($color, $alpha: 1),
+    95: color.change($color, $alpha: 0.95),
+    90: color.change($color, $alpha: 0.9),
+    85: color.change($color, $alpha: 0.85),
+    80: color.change($color, $alpha: 0.8),
+    75: color.change($color, $alpha: 0.75),
+    70: color.change($color, $alpha: 0.7),
+    65: color.change($color, $alpha: 0.65),
+    60: color.change($color, $alpha: 0.6),
+    55: color.change($color, $alpha: 0.55),
+    50: color.change($color, $alpha: 0.5),
+    45: color.change($color, $alpha: 0.45),
+    40: color.change($color, $alpha: 0.4),
+    35: color.change($color, $alpha: 0.35),
+    30: color.change($color, $alpha: 0.3),
+    25: color.change($color, $alpha: 0.25),
+    20: color.change($color, $alpha: 0.2),
+    15: color.change($color, $alpha: 0.15),
+    10: color.change($color, $alpha: 0.1),
+  );
+
+  @return $colors;
+}

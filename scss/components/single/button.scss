@@ -1,0 +1,15 @@
+.btn {
+  border: none;
+  border-radius: 0.4em;
+  padding: 0.3em 0.8em;
+  color: #FFF;
+  transition: 0.3s ease-in-out;
+  font-size: 1em;
+  text-align: center;
+  text-decoration: none;
+  background: rgb(14 165 233);
+}
+.btn:hover {
+  opacity: 0.7;
+  color: white;
+}

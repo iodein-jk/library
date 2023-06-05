@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./_assets/plugin/bootstrap-5.0.2-dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./_assets/plugin/bootstrap-5.0.2-dist/css/bootstrap-utilities.min.css">
+
+    <!-- prism CSS -->
+    <link rel="stylesheet" href="./_assets/plugin/prism/prism.css">
+
+    <!-- Pages CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/pages/documents.css">
+
+    <!-- document CSS -->
+    <link rel="stylesheet" href="./css/components/module/fadeSlider.css">
+
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/http-vue-loader"></script>
+
+    <!-- prism js -->
+    <script src="./_assets/plugin/prism/prism.js" defer></script>
+
+    <title>FadeSlider</title>
+  </head>
+  <body class="single document">
+    <div id="app">
+      <div class="l-twoColumn container-xxl">
+        <div class="l-twoColumn-sidebar">
+          <my-aside></my-aside>
+        </div>
+        <div class="l-twoColumn-main l-document">
+          <div class="l-document-toc">
+            <my-toc></my-toc>
+          </div>
+          <div class="l-document-article">
+            <h1 class="mb-4">FadeSlider</h1>
+            <p>ボタンクリップでフェードする画像ギャラリーを作成します。</p>
+            <h2 class="mt-5">Getting Started</h2>
+            <div class="mt-4 mb-4">
+              <a class="btn btn-primary" href="../scss/components/module/fadeSlider.scss" role="button" download="fadeSlider.scss">Download scss</a>
+              <a class="btn btn-primary" href="./css/components/module/fadeSlider.css" role="button" download="fadeSlider.css">Download css</a>
+              <a class="btn btn-primary" href="./js/module/fadeSlider.js" role="button" download="fadeSlider.js">Download js</a>
+              <pre class="mt-3"><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;./css/components/module/fadeSlider.css&quot;&gt;</code></pre>
+            </div>
+            <h2 class="mt-5">Live demo</h2>
+            <h3 class="mt-5">Default</h3>
+            <div class="demo">
+              <div class="fadeSlider" data-parent="0">
+                <div class="fadeSlider-grid">
+                  <div class="fadeSlider-row _current" data-index="0">
+                    <img class="fadeSlider-photo" src="http://placehold.jp/1280x720.png" alt="">
+                  </div>
+                  <div class="fadeSlider-row" data-index="1">
+                    <img class="fadeSlider-photo" src="http://placehold.jp/3d4070/ffffff/1280x720.png" alt="">
+                  </div>
+                  <div class="fadeSlider-row" data-index="2">
+                    <img class="fadeSlider-photo" src="http://placehold.jp/3e7048/ffffff/1280x720.png" alt="">
+                  </div>
+                  <div class="fadeSlider-row" data-index="3">
+                    <img class="fadeSlider-photo" src="http://placehold.jp/c9314f/ffffff/1280x720.png" alt="">
+                  </div>
+                </div>
+                <div class="fadeSlider-shift">
+                  <div class="fadeSlider-shiftColumn _left">
+                    <a href="#" class="fadeSlider-shiftButton _left _hidden" data-index="0" data-parent="0"></a>
+                  </div>
+                  <div class="fadeSlider-shiftColumn _right">
+                    <a href="#" class="fadeSlider-shiftButton _right" data-index="1" data-parent="0"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <pre><code class="language-html">&lt;div class=&quot;fadeSlider&quot; data-parent=&quot;0&quot;&gt;
+  &lt;div class=&quot;fadeSlider-grid&quot;&gt;
+    &lt;div class=&quot;fadeSlider-row _current&quot; data-index=&quot;0&quot;&gt;
+      &lt;img class=&quot;fadeSlider-photo&quot; src=&quot;http://placehold.jp/1280x720.png&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;fadeSlider-row&quot; data-index=&quot;1&quot;&gt;
+      &lt;img class=&quot;fadeSlider-photo&quot; src=&quot;http://placehold.jp/3d4070/ffffff/1280x720.png&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;fadeSlider-row&quot; data-index=&quot;2&quot;&gt;
+      &lt;img class=&quot;fadeSlider-photo&quot; src=&quot;http://placehold.jp/3e7048/ffffff/1280x720.png&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;fadeSlider-row&quot; data-index=&quot;3&quot;&gt;
+      &lt;img class=&quot;fadeSlider-photo&quot; src=&quot;http://placehold.jp/c9314f/ffffff/1280x720.png&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;fadeSlider-shift&quot;&gt;
+    &lt;div class=&quot;fadeSlider-shiftColumn _left&quot;&gt;
+      &lt;a href=&quot;#&quot; class=&quot;fadeSlider-shiftButton _left _hidden&quot; data-index=&quot;0&quot; data-parent=&quot;0&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;fadeSlider-shiftColumn _right&quot;&gt;
+      &lt;a href=&quot;#&quot; class=&quot;fadeSlider-shiftButton _right&quot; data-index=&quot;1&quot; data-parent=&quot;0&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            <pre><code class="language-javascript">import { fadeSlider } from "./module/fadeSlider.js"
+window.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.fadeSlider-shiftButton').forEach(element => {
+    var dataset = new fadeSlider(element.getAttribute("data-index"),element.getAttribute("data-parent"));
+    element.addEventListener("click", function(event){
+      event.preventDefault()
+      dataset.Image(this.getAttribute("data-index"))
+    })
+  });
+})</code></pre>
+            <h4 class="mt-5">Parameter</h4>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Material</th>
+                  <th>Description</th>
+                  <th class="text-center">Required</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>data-parent</code></td>
+                  <td>ギャラリーのグループ番号を指定 <code>[0-]</code></td>
+                  <td><code>Required</code></td>
+                </tr>
+                <tr>
+                  <td><code>data-index</code></td>
+                  <td>ギャラリーの画像の番号を指定<br>数値はグループ内を記述に <code>[0-]</code>で記述します</td>
+                  <td><code>Required</code></td>
+                </tr>
+              </tbody>
+            </table>
+            <h2 class="mt-5">Custom</h2>
+            <h3 class="mt-5">Thumnail</h3>
+            <p><code>&lt;div class=&quot;fadeSlider-thumbnail&quot; data-parent=&quot;1&quot;&gt;</code>を追加するとギャラリーにサムネイルを追加することができます。<br>
+            HTMLを追加後、下記のjavascriptのコードも合わせて追加してください<br>
+            <code>data-parent</code>属性はかならずメインエリアが同じ値を挿入してください。</p>
+            <div class="demo">
+              <div class="fadeSlider" data-parent="1">
+                <div class="fadeSlider-grid">
+                  <div class="fadeSlider-row _current" data-index="0">
+                    <img class="fadeSlider-photo" src="http://placehold.jp/1280x720.png" alt="">
+                  </div>
+                  <div class="fadeSlider-row" data-index="1">
+                    <img class="fadeSlider-photo" src="http://placehold.jp/3d4070/ffffff/1280x720.png" alt="">
+                  </div>
+                  <div class="fadeSlider-row" data-index="2">
+                    <img class="fadeSlider-photo" src="http://placehold.jp/3e7048/ffffff/1280x720.png" alt="">
+                  </div>
+                  <div class="fadeSlider-row" data-index="3">
+                    <img class="fadeSlider-photo" src="http://placehold.jp/c9314f/ffffff/1280x720.png" alt="">
+                  </div>
+                </div>
+                <div class="fadeSlider-shift">
+                  <div class="fadeSlider-shiftColumn _left">
+                    <a href="#" class="fadeSlider-shiftButton _left _hidden" data-index="0" data-parent="1"></a>
+                  </div>
+                  <div class="fadeSlider-shiftColumn _right">
+                    <a href="#" class="fadeSlider-shiftButton _right" data-index="1" data-parent="1"></a>
+                  </div>
+                </div>
+              </div>
+              <div class="fadeSlider-thumbnail" data-parent="1">
+                <button class="fadeSlider-thumbnail-anchor _current" data-index="0" data-parent="1">
+                  <img class="fadeSlider-thumbnail-image" src="http://placehold.jp/150x150.png" alt="">
+                </button>
+                <button class="fadeSlider-thumbnail-anchor" data-index="1" data-parent="1">
+                  <img class="fadeSlider-thumbnail-image" src="http://placehold.jp/3d4070/ffffff/150x150.png" alt="">
+                </button>
+                <button class="fadeSlider-thumbnail-anchor" data-index="2" data-parent="1">
+                  <img class="fadeSlider-thumbnail-image" src="http://placehold.jp/3e7048/ffffff/150x150.png" alt="">
+                </button>
+                <button class="fadeSlider-thumbnail-anchor" data-index="3" data-parent="1">
+                  <img class="fadeSlider-thumbnail-image" src="http://placehold.jp/c9314f/ffffff/150x150.png" alt="">
+                </button>
+              </div>
+            </div>
+            <pre><code class="language-html">&lt;div class=&quot;fadeSlider&quot; data-parent=&quot;1&quot;&gt;
+  &lt;div class=&quot;fadeSlider-grid&quot;&gt;
+    &lt;div class=&quot;fadeSlider-row _current&quot; data-index=&quot;0&quot;&gt;
+      &lt;img class=&quot;fadeSlider-photo&quot; src=&quot;http://placehold.jp/1280x720.png&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;fadeSlider-row&quot; data-index=&quot;1&quot;&gt;
+      &lt;img class=&quot;fadeSlider-photo&quot; src=&quot;http://placehold.jp/3d4070/ffffff/1280x720.png&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;fadeSlider-row&quot; data-index=&quot;2&quot;&gt;
+      &lt;img class=&quot;fadeSlider-photo&quot; src=&quot;http://placehold.jp/3e7048/ffffff/1280x720.png&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;fadeSlider-row&quot; data-index=&quot;3&quot;&gt;
+      &lt;img class=&quot;fadeSlider-photo&quot; src=&quot;http://placehold.jp/c9314f/ffffff/1280x720.png&quot; alt=&quot;&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;fadeSlider-shift&quot;&gt;
+    &lt;div class=&quot;fadeSlider-shiftColumn _left&quot;&gt;
+      &lt;a href=&quot;#&quot; class=&quot;fadeSlider-shiftButton _left _hidden&quot; data-index=&quot;0&quot; data-parent=&quot;1&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;fadeSlider-shiftColumn _right&quot;&gt;
+      &lt;a href=&quot;#&quot; class=&quot;fadeSlider-shiftButton _right&quot; data-index=&quot;1&quot; data-parent=&quot;1&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;fadeSlider-thumbnail&quot; data-parent=&quot;1&quot;&gt;
+  &lt;button class=&quot;fadeSlider-thumbnail-anchor _current&quot; data-index=&quot;0&quot; data-parent=&quot;1&quot;&gt;
+    &lt;img class=&quot;fadeSlider-thumbnail-image&quot; src=&quot;http://placehold.jp/150x150.png&quot; alt=&quot;&quot;&gt;
+  &lt;/button&gt;
+  &lt;button class=&quot;fadeSlider-thumbnail-anchor&quot; data-index=&quot;1&quot; data-parent=&quot;1&quot;&gt;
+    &lt;img class=&quot;fadeSlider-thumbnail-image&quot; src=&quot;http://placehold.jp/3d4070/ffffff/150x150.png&quot; alt=&quot;&quot;&gt;
+  &lt;/button&gt;
+  &lt;button class=&quot;fadeSlider-thumbnail-anchor&quot; data-index=&quot;2&quot; data-parent=&quot;1&quot;&gt;
+    &lt;img class=&quot;fadeSlider-thumbnail-image&quot; src=&quot;http://placehold.jp/3e7048/ffffff/150x150.png&quot; alt=&quot;&quot;&gt;
+  &lt;/button&gt;
+  &lt;button class=&quot;fadeSlider-thumbnail-anchor&quot; data-index=&quot;3&quot; data-parent=&quot;1&quot;&gt;
+    &lt;img class=&quot;fadeSlider-thumbnail-image&quot; src=&quot;http://placehold.jp/c9314f/ffffff/150x150.png&quot; alt=&quot;&quot;&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+            <pre><code class="language-javascript">document.querySelectorAll('.fadeSlider-thumbnail-anchor').forEach(element => {
+  var dataset = new fadeSlider(element.getAttribute("data-index"),element.getAttribute("data-parent"));
+  element.addEventListener("click", function(event){
+    event.preventDefault()
+    dataset.thumnail(this.getAttribute("data-index"))
+    dataset.Image(this.getAttribute("data-index"))
+  })
+});</code></pre>
+          </div>
+        </div>
+      </div>
+      <my-footer></my-footer>
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- <script src="./_assets/plugin/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script> -->
+
+    <!-- Optional JavaScript;-->
+    <script src="./js/documents.js"></script>
+    <script src="./js/fadeSlider.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,260 @@
+.single.document {
+  //background: linear-gradient(to right,#4fc7fe,#4a80fb);
+  color: #334155;
+  font-size: 18px;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  white-space: pre-wrap !important;
+}
+
+pre[class*='language-'] {
+  border-radius: 0.6em;
+}
+
+.l-twoColumn {
+  display: grid;
+  grid-template-areas: "sidebar main";
+  grid-template-columns: 1fr 4fr;
+
+  &-sidebar {
+    border-right: solid 1px #eee;
+    grid-area: sidebar;
+    position: relative;
+  }
+  
+  &-main {
+    grid-area: main;
+  }
+}
+
+.l-document {
+  display: grid;
+  grid-template-areas: "article toc";
+  grid-template-columns: minmax(1000px, 4fr) 1fr;
+  grid-template-rows: auto;
+
+  &-article {
+    background-color: white;
+    font-size: 1em;
+    grid-area: article;
+    padding: 2em 4em;
+
+    h1 {
+      font-size: 1.999em;
+    }
+
+    h2 {
+      font-size: 1.414em;
+      font-weight: bold;
+    }
+
+    h3 {
+      font-size: 1em;
+    }
+
+    pre {
+      font-size: 0.8em;
+    }
+
+    img {
+      height: auto;
+      max-width: 100%;
+    }
+  }
+
+  &-toc {
+    grid-area: toc;
+    position: relative;
+  }
+}
+
+.docSidebar {
+  height: 100svh;
+  overflow: auto;
+  padding: 2em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20%;
+
+  &::-webkit-scrollbar{
+    width: 6px;
+  }
+  
+  &::-webkit-scrollbar-track{
+    background-color: #eef2f8;
+  }
+
+  &::-webkit-scrollbar-thumb{
+    background-color: #c9d4e1;
+  }
+}
+
+.sideNavUlist {
+  list-style: none;
+  font-size: 16px;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  // max-width: 360px;
+  
+  @at-root {
+    .sideNavUlist-item {
+      margin-bottom: 1em;
+      
+      a {
+        color: #0f172a;
+        text-decoration: none;
+      }
+      
+      button,
+      p {
+        background: none;
+        border: none;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-right: 0;
+        line-height: 1.4;
+      }
+
+      ul {
+        list-style: none;
+      }
+    }
+
+    .sideNavUlist-parent {
+      font-size: 1em;
+      font-weight: 500;
+      padding-left: 0;
+      position: relative;
+
+      &._current {
+        border-color: rgb(14 165 233);
+        color: rgb(14 165 233);
+      }
+    }
+  }
+}
+
+.sideNavChild {
+  padding-left: 0;
+  margin-top: 0.25em;
+  margin-left: 0.25em;
+
+  @at-root {
+    .sideNavChild-anchor {
+      border-left: solid 2px #e5e7eb;
+      display: inline-block;
+      padding-top: 0.25em;
+      padding-bottom: 0.25em;
+      padding-left: 1em;
+
+      &._current,
+      &:hover {
+        border-color: rgb(14 165 233);
+        color: rgb(14 165 233);
+      }
+    }
+  }
+}
+
+.demo {
+  background-color: #f8fafc;
+  border: solid  #e5e7eb;
+  border-radius: 0.4em;
+  padding: 1.5rem;
+  border-width: 1px;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.toc {
+  font-size: 16px;
+  padding: 0 2em;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 2em;
+
+  &Heading {
+    border-bottom: solid 1px #dee2e6;
+  }
+
+  a {
+    border-radius: 1em;
+    color: #6c757d;
+    display: block;
+    font-size: 1em;
+    padding: 0.25em 1em;
+    text-decoration: none;
+
+    &:hover,
+    &._current {
+      background-color: #edeeee;
+    }
+
+    &[class*="heading_H1"] {
+      font-weight: bold;
+    }
+
+    &[class*="heading_H2"] {
+      margin-left: 0.25em;
+    }
+
+    &[class*="heading_H3"] {
+      margin-left: 1em;
+
+      &+ a[class*="heading_H2"] {
+        margin-top: 0.4em;
+      }
+    }
+
+    &[class*="heading_H4"] {
+      margin-left: 2em;
+    }
+
+    &[class*="heading_H5"] {
+      margin-left: 3em;
+    }
+
+    &[class*="heading_H6"] {
+      margin-left: 4em;
+    }
+  }
+}
+
+.switching {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.d-footer {
+  background-color: #ececec;
+  min-height: 80vh;
+  overflow: hidden;
+}
+
+.switching {
+  display: flex;
+  justify-content: flex-end;
+
+  &-radio {
+    display: none;
+  }
+
+  &-container {
+    background-color: rgb(229, 231, 235);
+    border-radius: 0.6em;
+    display: flex;
+    justify-content: center;
+  }
+
+  &-group {
+    flex: 1 1 50%;
+    font-size: 0.8em;
+    font-weight: bold;
+    list-style: 1;
+    padding: 0.6em 1em;
+  }
+}

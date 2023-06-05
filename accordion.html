@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./_assets/plugin/bootstrap-5.0.2-dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./_assets/plugin/bootstrap-5.0.2-dist/css/bootstrap-utilities.min.css">
+
+    <!-- prism CSS -->
+    <link rel="stylesheet" href="./_assets/plugin/prism/prism.css">
+
+    <!-- Pages CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/pages/documents.css">
+
+    <!-- document CSS -->
+    <link rel="stylesheet" href="./css/components/module/accordion.css">
+
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/http-vue-loader"></script>
+
+    <!-- prism js -->
+    <script src="./_assets/plugin/prism/prism.js" defer></script>
+
+    <title>Accordion</title>
+  </head>
+  <body class="page-document">
+    <div id="app">
+      <div class="l-twoColumn container-xxl">
+        <div class="l-twoColumn-sidebar">
+          <my-aside></my-aside>
+        </div>
+        <div class="l-twoColumn-main l-document">
+          <div class="l-document-toc">
+            <my-toc></my-toc>
+          </div>
+          <div class="l-document-article">
+            <h1 class="mb-4">Accordion</h1>
+            <h2 class="mt-5">Getting Started</h2>
+            <div class="mt-4 mb-4">
+              <a class="btn btn-primary" href="../scss/components/module/accordiong.scss" role="button" download="accordiong.scss">Download scss</a>
+              <a class="btn btn-primary" href="./css/components/module/accordiong.css" role="button" download="accordiong.css">Download css</a>
+              <a class="btn btn-primary" href="./js/module/accordion.js" role="button" download="accordion.js">Download js</a>
+            </div>
+            <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;./css/components/module/accordiong.css&quot;&gt;</code></pre>
+            <h2 class="mt-5">Live demo</h2>
+            <div class="demo">
+              <div class="accordion">
+                <div class="accordion-item">
+                  <div class="accordion-team" data-toggle="accordion_1">
+                    <button class="accordion-button" type="button">Accordion 1</button>
+                  </div>
+                  <div class="accordion-description">
+                    <p>しかし、こうした件は全部が重要ではない。もっと重要なのは、 昔ラ・ロシュフーコーはこう言いました、「うぬぼれというものがついぞなかったら、人生はてんで楽しくあるまい。」思い返せば。 こうであれば、 昔久保田美文はこう言ったことがある、「「己の長を以って人の短をあらわすなかれ」人は往々にして自分の長所を標準として他人の短所を責めがちなんだ。」諸君にもこの言葉の意味をちゃんと味わわせようと思います。 私からすると、 誰でも時々こんな問題に遭遇するのでしょう。 こんな問題に対面している時、 今では、趣旨に関する問題を解決するのが一番大事です。そこで、問題のコツは到底なんなんでしょうか？ 上に述べた通り、こうした困難な選択肢に向き合って、私は思いを巡らせ、居ても立っても居られないです。 しかし、こうした件は全部が重要ではない。もっと重要なのは、 昔二葉亭四迷は不意にこう言いました、「いや、人生は気合だね。」短いながら、この言葉は私に様々な考えを持たせます。</p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-team" data-toggle="accordion_1">
+                    <button class="accordion-button" type="button">Accordion 2</button>
+                  </div>
+                  <div class="accordion-description">
+                    <p>そうだとすると、 我々はとても言い難い事実を面せざるを得ない、それが我々はとても言い難い事実を面せざるを得ない、それが一般的には、我々は必ず慎重に考えなければなりません。 昔ホラティウスはこう言いました、「あきらめてしまうと、癒しようのない不幸も和らげる。」思い返せば。 私にとって、 昔トーマス・エジソンは不意にこう言いました、「すべては、待っている間に頑張った人のもの。」それによって私は啓発されました、 こんな事実は私本人に対して深刻な意味を持って、この世界にとってもある程度有意義なことだと信じています。 昔バイロンはこう言いました、「ずいぶん敵も持ったけど、妻よ、お前のようなヤツは初めてだ。」諸君にもこの言葉の意味をちゃんと味わわせようと思います。 こうであれば。</p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-team" data-toggle="accordion_1">
+                    <button class="accordion-button" type="button">Accordion 3</button>
+                  </div>
+                  <div class="accordion-description">
+                    <p>誰もご存知の通り、意義さえあれば、を慎重に考えざるを得ない。 そうだとすると、 個人的に言うなら、は私にとって非常に重要だと言わなければならないです。 一般的には、我々は必ず慎重に考えなければなりません。 考え直してみれば、は一体どんな存在なのかをきっちりわかるのが全ての問題の解くキーとなります。 私にとって、 昔トルストイは不意にこう言いました、「いかなる時でも、お辞儀はし足りないよりも、し過ぎたほうがいい。」こういう思考を持って、我々はこの問題をより慎重に考え直さねばならない： 誰でも時々こんな問題に遭遇するのでしょう。 こんな問題に対面している時。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <pre><code class="language-html">&lt;div class=&quot;accordion&quot;&gt;
+  &lt;div class=&quot;accordion-item&quot;&gt;
+    &lt;div class=&quot;accordion-team&quot; data-toggle=&quot;accordion_1&quot;&gt;
+      &lt;button class=&quot;accordion-button&quot; type=&quot;button&quot;&gt;Accordion 1&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;accordion-description&quot;&gt;
+      &lt;p&gt;Accordion Contents 1&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;accordion-item&quot;&gt;
+    &lt;div class=&quot;accordion-team&quot; data-toggle=&quot;accordion_1&quot;&gt;
+      &lt;button class=&quot;accordion-button&quot; type=&quot;button&quot;&gt;Accordion 2&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;accordion-description&quot;&gt;
+      &lt;p&gt;Accordion Contents 2&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;accordion-item&quot;&gt;
+    &lt;div class=&quot;accordion-team&quot; data-toggle=&quot;accordion_1&quot;&gt;
+      &lt;button class=&quot;accordion-button&quot; type=&quot;button&quot;&gt;Accordion 3&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;accordion-description&quot;&gt;
+      &lt;p&gt;Accordion Contents 3&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            <pre><code class="language-javascript">import { accordion } from "./module/accordion.js"</code></pre>
+            <h2 class="mt-5">Always open</h2>
+            <p>各、<code>.accordion-team</code>の<code>data-toggle</code>属性を削除すると、アコーディオンアイテムが開いたままになります。</p>
+            <div class="demo">
+              <div class="accordion">
+                <div class="accordion-item">
+                  <div class="accordion-team">
+                    <button class="accordion-button" type="button">Accordion 1</button>
+                  </div>
+                  <div class="accordion-description">
+                    <p>しかし、こうした件は全部が重要ではない。もっと重要なのは、 昔ラ・ロシュフーコーはこう言いました、「うぬぼれというものがついぞなかったら、人生はてんで楽しくあるまい。」思い返せば。 こうであれば、 昔久保田美文はこう言ったことがある、「「己の長を以って人の短をあらわすなかれ」人は往々にして自分の長所を標準として他人の短所を責めがちなんだ。」諸君にもこの言葉の意味をちゃんと味わわせようと思います。 私からすると、 誰でも時々こんな問題に遭遇するのでしょう。 こんな問題に対面している時、 今では、趣旨に関する問題を解決するのが一番大事です。そこで、問題のコツは到底なんなんでしょうか？ 上に述べた通り、こうした困難な選択肢に向き合って、私は思いを巡らせ、居ても立っても居られないです。 しかし、こうした件は全部が重要ではない。もっと重要なのは、 昔二葉亭四迷は不意にこう言いました、「いや、人生は気合だね。」短いながら、この言葉は私に様々な考えを持たせます。</p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-team">
+                    <button class="accordion-button" type="button">Accordion 2</button>
+                  </div>
+                  <div class="accordion-description">
+                    <p>そうだとすると、 我々はとても言い難い事実を面せざるを得ない、それが我々はとても言い難い事実を面せざるを得ない、それが一般的には、我々は必ず慎重に考えなければなりません。 昔ホラティウスはこう言いました、「あきらめてしまうと、癒しようのない不幸も和らげる。」思い返せば。 私にとって、 昔トーマス・エジソンは不意にこう言いました、「すべては、待っている間に頑張った人のもの。」それによって私は啓発されました、 こんな事実は私本人に対して深刻な意味を持って、この世界にとってもある程度有意義なことだと信じています。 昔バイロンはこう言いました、「ずいぶん敵も持ったけど、妻よ、お前のようなヤツは初めてだ。」諸君にもこの言葉の意味をちゃんと味わわせようと思います。 こうであれば。</p>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <div class="accordion-team">
+                    <button class="accordion-button" type="button">Accordion 3</button>
+                  </div>
+                  <div class="accordion-description">
+                    <p>誰もご存知の通り、意義さえあれば、を慎重に考えざるを得ない。 そうだとすると、 個人的に言うなら、は私にとって非常に重要だと言わなければならないです。 一般的には、我々は必ず慎重に考えなければなりません。 考え直してみれば、は一体どんな存在なのかをきっちりわかるのが全ての問題の解くキーとなります。 私にとって、 昔トルストイは不意にこう言いました、「いかなる時でも、お辞儀はし足りないよりも、し過ぎたほうがいい。」こういう思考を持って、我々はこの問題をより慎重に考え直さねばならない： 誰でも時々こんな問題に遭遇するのでしょう。 こんな問題に対面している時。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <pre><code class="language-html">&lt;div class=&quot;accordion&quot;&gt;
+  &lt;div class=&quot;accordion-item&quot;&gt;
+    &lt;div class=&quot;accordion-team&quot;&gt;
+      &lt;button class=&quot;accordion-button&quot; type=&quot;button&quot;&gt;Accordion 1&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;accordion-description&quot;&gt;
+      ccordion Contents 1
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;accordion-item&quot;&gt;
+    &lt;div class=&quot;accordion-team&quot;&gt;
+      &lt;button class=&quot;accordion-button&quot; type=&quot;button&quot;&gt;Accordion 2&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;accordion-description&quot;&gt;
+      ccordion Contents 2
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;accordion-item&quot;&gt;
+    &lt;div class=&quot;accordion-team&quot;&gt;
+      &lt;button class=&quot;accordion-button&quot; type=&quot;button&quot;&gt;Accordion 3&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;accordion-description&quot;&gt;
+      ccordion Contents 3
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+      <my-footer></my-footer>
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- <script src="./_assets/plugin/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script> -->
+
+    <!-- Optional JavaScript;-->
+    <script src="./js/documents.js"></script>
+    <script src="./js/accordion.js" type="module"></script>
+  </body>
+</html>

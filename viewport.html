@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./_assets/plugin/bootstrap-5.0.2-dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./_assets/plugin/bootstrap-5.0.2-dist/css/bootstrap-utilities.min.css">
+
+    <!-- prism CSS -->
+    <link rel="stylesheet" href="./_assets/plugin/prism/prism.css">
+
+    <!-- Pages CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/pages/documents.css">
+
+    <!-- document CSS -->
+
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/http-vue-loader"></script>
+
+    <!-- prism js -->
+    <script src="./_assets/plugin/prism/prism.js" defer></script>
+
+    <title>viewport</title>
+  </head>
+  <body class="single document">
+    <div id="app">
+      <div class="l-twoColumn container-xxl">
+        <div class="l-twoColumn-sidebar">
+          <my-aside></my-aside>
+        </div>
+        <div class="l-twoColumn-main l-document">
+          <div class="l-document-toc">
+            <my-toc></my-toc>
+          </div>
+          <div class="l-document-article">
+            <h1 class="mb-4">viewport</h1>
+            <p><code>&lt;meta name=&quot;viewport&quot;&gt;</code>の設定を変換します</p>
+            <p>デバイスの画面サイズの横幅を取得し、サイズに応じて<code>[content]</code>の<code>width</code>を書き換えます</p>
+            <p><code>viewport</code>ロード、リサイズ、デバイス回転のタイミングで発火し、<code>viewport</code>を更新します</p>
+            <p>変化の状態はブラウザの開発ツールを開くと確認可能です。</p>
+            <h2 class="mt-5">Getting Started</h2>
+            <div class="mt-4 mb-4">
+              <a class="btn btn-primary" href="./js/module/viewport.js" role="button" download="viewport.js">Download js</a>
+            </div>
+            <h2 class="mt-5">Live demo</h2>
+            <div class="demo">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th><code>Media Query</code></th>
+                    <td><code id="media"></code></td>
+                  </tr>
+                  <tr>
+                    <th><code>&lt;meta name=&quot;viewport&quot; content=&quot;&quot;&gt;</code></th>
+                    <td><code id="content"></code></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="mt-4">開発ツールから<code>&lt;meta name=&quot;viewport&quot; content=&quot;&quot;&gt;</code>タグを確認してください</p>
+            </div>
+            <pre><code class="language-javascript">import { viewport } from "./module/viewport.js"
+let option = {
+  mediaMaxWidth: 1200,
+  minimum: 'width=device-width,initial-scale=1.0,viewport-fit=cover',
+  width: 1500, 
+}
+
+viewport(option)
+
+//以下表示確認用
+window.addEventListener('DOMContentLoaded', function(){
+  document.getElementById('media').textContent = viewport(option).media
+  document.getElementById('content').textContent = viewport(option).content
+})</code></pre>
+            <table class="table caption-top mt-4">
+              <thead>
+                <tr>
+                  <th scope="col">Key</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Default</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"><code>mediaMaxWidth</code></th>
+                  <td>メディアクエリで分岐するmax-widthを指定(<code>px</code>)</td>
+                  <td><code>1000</code></td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>minimum</code></th>
+                  <td><code>mediaMaxWidth</code>の条件に入らない場合の<code>viewport</code>を設定</td>
+                  <td><code>width=device-width,initial-scale=1.0</code></td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>width</code></th>
+                  <td><code>mediaMaxWidth</code>の条件に入った場合の<code>viewport</code>を設定</td>
+                  <td><code>1280</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <my-footer></my-footer>
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- <script src="./_assets/plugin/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script> -->
+
+    <!-- Optional JavaScript;-->
+    <script src="./js/documents.js"></script>
+    <script src="./js/viewport.js" type="module"></script>
+  </body>
+</html>

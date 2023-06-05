@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./_assets/plugin/bootstrap-5.0.2-dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./_assets/plugin/bootstrap-5.0.2-dist/css/bootstrap-utilities.min.css">
+
+    <!-- prism CSS -->
+    <link rel="stylesheet" href="./_assets/plugin/prism/prism.css">
+
+    <!-- Pages CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/pages/documents.css">
+
+    <!-- document CSS -->
+
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/http-vue-loader"></script>
+
+    <!-- prism js -->
+    <script src="./_assets/plugin/prism/prism.js" defer></script>
+
+    <title>pathTracking</title>
+  </head>
+  <body class="single document">
+    <div id="app">
+      <div class="l-twoColumn container-xxl">
+        <div class="l-twoColumn-sidebar">
+          <my-aside></my-aside>
+        </div>
+        <div class="l-twoColumn-main l-document">
+          <div class="l-document-toc">
+            <my-toc></my-toc>
+          </div>
+          <div class="l-document-article">
+            <h1 class="mb-4">pathTracking</h1>
+            <p>指定した<code>path</code>に沿って、スクロールと連動したアイコンのポジションをアニメーションさせます。</p>
+            <p>道となる<code>path</code>と、Animationさせる<code>pointer</code>が必須</p>
+            <p>また、オプション内の<code>delay</code>配列を指定すると、
+            <br>スクロール停止後に、スクロール位置に基づいたラインまでピンが移動する遅延アニメーション表現が可能です。</p>
+            <p>※<code>path</code>に<code>transform</code>属性が入っていると取得する線の位置がずれるので、必ず削除してください</p>
+            <h2 class="mt-5">Getting Started</h2>
+            <div class="mt-4 mb-4">
+              <a class="btn btn-primary" href="./js/module/pathTracking.js" role="button" download="pathTracking.js">Download js</a>
+            </div>
+            <h2 class="mt-5">Live demo</h2>
+            <div class="demo" id="demo_1">
+              <svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 768 1366" style="enable-background:new 0 0 768 1366;" xml:space="preserve">
+                <path id="path" class="st0" d="M249.5,39.5c0,0-144,129-58,239s426,107,434,249s-495,130-506,335s501,56,491,221s-491.2,240.4-491.2,240.4" fill="none" stroke="#A5A5A5"/>
+                <circle id="pointer" cx="240" cy="50" r="15" fill="#3c66c9" stroke="#fff" stroke-width="9" stroke="none" />
+              </svg>
+            </div>
+            <pre><code class="language-html">&lt;div id=&quot;demo_1&quot;&gt;
+  &lt;svg version=&quot;1.1&quot; id=&quot;レイヤー_1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; x=&quot;0px&quot; y=&quot;0px&quot; viewBox=&quot;0 0 768 1366&quot; style=&quot;enable-background:new 0 0 768 1366;&quot; xml:space=&quot;preserve&quot;&gt;
+    &lt;path id=&quot;path&quot; class=&quot;st0&quot; d=&quot;M249.5,39.5c0,0-144,129-58,239s426,107,434,249s-495,130-506,335s501,56,491,221s-491.2,240.4-491.2,240.4&quot; fill=&quot;none&quot; stroke=&quot;#A5A5A5&quot;/&gt;
+    &lt;circle id=&quot;pointer&quot; cx=&quot;240&quot; cy=&quot;50&quot; r=&quot;15&quot; fill=&quot;#3c66c9&quot; stroke=&quot;#fff&quot; stroke-width=&quot;9&quot; stroke=&quot;none&quot; /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;</code></pre>
+            <pre><code class="language-javascript">import { pathTracking } from "./module/pathTracking.js"
+window.addEventListener('DOMContentLoaded', function(){
+  let svgPathAnime = new pathTracking(
+    {
+      path: '#path', 
+      pointer: '#pointer', 
+      custom: {
+        area: '#demo_1',
+        root: '-50%'
+      }
+    }
+  )
+  svgPathAnime.animation()
+})</code></pre>
+
+            <h3 class="mt-5">Delay 400</h3>
+            <div class="demo" id="demo_2">
+              <svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 768 1366" style="enable-background:new 0 0 768 1366;" xml:space="preserve">
+                <path id="path_2" class="st0" d="M249.5,39.5c0,0-144,129-58,239s426,107,434,249s-495,130-506,335s501,56,491,221s-491.2,240.4-491.2,240.4" fill="none" stroke="#A5A5A5"/>
+                <circle id="pointer_2" cx="240" cy="50" r="15" fill="#3c66c9" stroke="#fff" stroke-width="9" stroke="none" />
+              </svg>
+            </div>
+            <pre><code class="language-html">&lt;div id=&quot;demo_2&quot;&gt;
+  &lt;svg version=&quot;1.1&quot; id=&quot;レイヤー_1&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; x=&quot;0px&quot; y=&quot;0px&quot; viewBox=&quot;0 0 768 1366&quot; style=&quot;enable-background:new 0 0 768 1366;&quot; xml:space=&quot;preserve&quot;&gt;
+    &lt;path id=&quot;path_2&quot; class=&quot;st0&quot; d=&quot;M249.5,39.5c0,0-144,129-58,239s426,107,434,249s-495,130-506,335s501,56,491,221s-491.2,240.4-491.2,240.4&quot; fill=&quot;none&quot; stroke=&quot;#A5A5A5&quot;/&gt;
+    &lt;circle id=&quot;pointer_2&quot; cx=&quot;240&quot; cy=&quot;50&quot; r=&quot;15&quot; fill=&quot;#3c66c9&quot; stroke=&quot;#fff&quot; stroke-width=&quot;9&quot; stroke=&quot;none&quot; /&gt;
+  &lt;/svg&gt;
+&lt;/div&gt;</code></pre>
+            <pre><code class="language-javascript">let svgPathAnime_2 = new pathTracking(
+  {
+    path: '#path_2', 
+    pointer: '#pointer_2', 
+    custom: {
+      area: '#demo_2',
+      root: '-50%',
+      delay: 400
+    }
+  }
+)
+svgPathAnime_2.animation()</code></pre>
+            <table class="table caption-top mt-4">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="2">Key</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Default</th>
+                  <th scope="col" class="text-center">Required</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" colspan="2"><code>path</code></th>
+                  <td>道になる<code>&lt;path&gt;</code>の<code>id</code></td>
+                  <td><code>無</code></td>
+                  <td class="text-center"><code>Required</code></td>
+                </tr>
+                <tr>
+                  <th scope="row" colspan="2"><code>pointer</code></th>
+                  <td>道の上を進むピンの<code>id</code></td>
+                  <td><code>無</code></td>
+                  <td class="text-center"><code>Required</code></td>
+                </tr>
+                <tr>
+                  <th scope="row" rowspan="3" class="align-middle"><code>[custom]</code></th>
+                  <td><code>area</code></td>
+                  <td>アニメーションを始めるコンテンツの位置</td>
+                  <td><code>0</code></td>
+                  <td rowspan="3" class="align-middle text-center"></td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>root</code></th>
+                  <td><code>area</code>で指定された高さに+でviewportの高さを計算。<br><code>-50%</code>で（<code>area</code>のPotionTop） - （viewportサイズの高さの半分）の位置からアニメーションが始まる</td>
+                  <td><code>0%</code></td>
+                </tr>
+                <tr>
+                  <th scope="row"><code>delay</code></th>
+                  <td>スクロールしてからアニメーションが開始するまでのインターバルを設定<br><code>0</code>でスクロールと同時</td>
+                  <td><code>0</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <my-footer></my-footer>
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- <script src="./_assets/plugin/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script> -->
+
+    <!-- Optional JavaScript;-->
+    <script src="./js/documents.js"></script>
+    <script src="./js/pathTracking.js" type="module"></script>
+  </body>
+</html>

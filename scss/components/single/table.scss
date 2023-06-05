@@ -1,0 +1,32 @@
+.table {
+  border-collapse: collapse;
+  width: 100%;
+
+  th,td {
+    padding: 0.6em 1em;
+  }
+
+  thead {
+    tr {
+      background-color: #f8fafc;
+      color: #64748b;
+    }
+
+    th {
+      border: none;
+      border-bottom: solid 1px #e5e7eb;
+      font-weight: 500;
+    }
+  }
+
+  tbody {
+    tr {
+      background-color: white;
+    }
+
+    td,th {
+      border: none;
+      border-bottom: solid 1px #e5e7eb;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+/*!
+Theme Name: Skywalker 2021
+Author: nanoconnect, Inc
+Author URI: https://www.nanoconnect.co.jp/
+Description: A web site of Gamification Platform "Skywalker"
+Version: 0.0.1
+Requires at least: 4.9
+Tested up to: 4.9
+Requires PHP: 7.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: ncskywalker
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@use "base";
+@use "reset";
+@use "root";
+@use "components";
+//@use "pages";

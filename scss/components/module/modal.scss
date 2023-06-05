@@ -1,0 +1,199 @@
+// Doi
+.modal {
+  --modal-close-size: 1.5rem;
+
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-dialog {
+  position: relative;
+  margin: 1rem;
+  width: 100%;
+  max-width: 600px;
+  // background-color: #fff;
+}
+
+.modal-body {
+  box-sizing: border-box;
+  overflow-y: auto;
+  // min-height: 5rem;
+  max-height: calc(95vh - 56px - 64px);
+  position: relative;
+  padding: 15px;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  border-radius: 0.75rem;
+  border: 0;
+  box-shadow: 0 0.5rem 0.75rem rgb(0, 0, 0, 10%);
+  background-clip: padding-box;
+  outline: 0;
+}
+
+.modal-p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+.modal._fade .modal-dialog {
+  transform: translate(0, -25%);
+  transition: transform 0.3s ease-out;
+}
+.modal._in .modal-dialog {
+  transform: translate(0, 0);
+}
+
+.modal._fade._in {
+  opacity: 1;
+}
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
+}
+
+.modal-backdrop._fade {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.modal-backdrop._in {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+.modal-header {
+  box-sizing: border-box;
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+  min-height: 16.42857143px;
+}
+
+.modal-header .close {
+  margin-top: -2px;
+}
+
+.modal-title {
+  margin: 0;
+  line-height: 1.42857143;
+}
+
+.modal-footer {
+  box-sizing: border-box;
+  padding: 15px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.modal-footer .btn + .btn {
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+.modal-footer .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+.modal-footer .btn-block + .btn-block {
+  margin-left: 0;
+}
+
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+}
+
+.modal-close {
+  width: var(--modal-close-size);
+  height: var(--modal-close-size);
+  float: right;
+  margin-top: -2px;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  -webkit-appearance: none;
+
+  &:hover,
+  &:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+  }
+
+  .modal-body & {
+    margin-top: calc(var(--modal-close-size) / -3);
+  }
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+._fade {
+  opacity: 0;
+  transition: opacity 0.15s linear;
+}
+
+.modal-button {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  &._column {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &._stretched {
+    & > * {
+      flex: 1;
+    }
+  }
+}

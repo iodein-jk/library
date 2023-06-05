@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./_assets/plugin/bootstrap-5.0.2-dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./_assets/plugin/bootstrap-5.0.2-dist/css/bootstrap-utilities.min.css">
+
+    <!-- prism CSS -->
+    <link rel="stylesheet" href="./_assets/plugin/prism/prism.css">
+
+    <!-- Pages CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/pages/documents.css">
+
+    <!-- document CSS -->
+    <link rel="stylesheet" href="./css/components/module/typing.css">
+
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/http-vue-loader"></script>
+
+    <!-- prism js -->
+    <script src="./_assets/plugin/prism/prism.js" defer></script>
+
+    <title>cookie</title>
+  </head>
+  <body class="single document">
+    <div id="app">
+      <div class="l-twoColumn container-xxl">
+        <div class="l-twoColumn-sidebar">
+          <my-aside></my-aside>
+        </div>
+        <div class="l-twoColumn-main l-document">
+          <div class="l-document-toc">
+            <my-toc></my-toc>
+          </div>
+          <div class="l-document-article">
+            <h1 class="mb-4">Cookie</h1>
+            <p>ページを開いた時のCookieを保存し、ページを開いた回数を計測します。</p>
+            <p>関数を実行すると、返り値としてページの訪問回数が返されます</p>
+            <p>ブラウザのシークレットモードでCookieをリセットできます。</p>
+            <p>引数により、クッキーの保存日数を指定可能。（<code>1</code>=1日）</p>
+            <h2 class="mt-5">Getting Started</h2>
+            <div class="mt-4 mb-4">
+              <a class="btn btn-primary" href="./js/module/cookie.js" role="button" download="cookie.js">Download js</a>
+            </div>
+            <h2 class="mt-5">Live demo</h2>
+            <div class="demo">
+              <p><span id="cookieText"></span>回目の訪問です</p>
+            </div>
+            <pre><code class="language-javascript">import { cookie } from "./module/cookie.js"
+let counter = cookie(120)
+
+window.addEventListener("DOMContentLoaded", function(){
+  document.getElementById('cookieText').textContent = counter
+})</code></pre>
+          </div>
+        </div>
+      </div>
+      <my-footer></my-footer>
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- <script src="./_assets/plugin/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script> -->
+
+    <!-- Optional JavaScript;-->
+    <script src="./js/documents.js"></script>
+    <script src="./js/cookie.js" type="module"></script>
+  </body>
+</html>

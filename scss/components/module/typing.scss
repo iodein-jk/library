@@ -1,0 +1,58 @@
+.Typing {
+  border: solid 1px;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  
+  &-Container {
+    align-items: center;
+    display: flex;
+    line-height: 1;
+    padding: 0.5em 1em;
+    position: relative;
+    z-index: 2;
+
+    &::after {
+      -webkit-animation: typingCursor .8s ease infinite;
+              animation: typingCursor .8s ease infinite;
+      background-color: black;
+      content: "";
+      display: block;
+      min-height: 1em;
+      margin-left: 0.25em;
+      width: 2px;
+    }
+  }
+
+  &-text {
+    display: inline-block;
+    font-weight: bold;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  &-icon {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+  }
+}
+
+
+@-webkit-keyframes typingCursor {
+  from {
+    opacity:0;
+  }
+  to{
+    opacity:1
+  }
+}
+
+@keyframes typingCursor {
+  from {
+    opacity:0;
+  }
+  to{
+    opacity:1
+  }
+}

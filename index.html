@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./_assets/plugin/bootstrap-5.0.2-dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="./_assets/plugin/bootstrap-5.0.2-dist/css/bootstrap-utilities.min.css">
+
+    <!-- Pages CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/pages/documents.css">
+
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/http-vue-loader"></script>
+
+    <title>Template</title>
+  </head>
+  <body class="single document">
+    <div id="app">
+      <div class="l-twoColumn container-xxl">
+        <div class="l-twoColumn-sidebar">
+          <my-aside></my-aside>
+        </div>
+        <div class="l-twoColumn-main l-document">
+          <div class="l-document-toc">
+            <my-toc></my-toc>
+          </div>
+          <div class="l-document-article">
+            <h1>Document Library</h1>
+            <h2 class="mt-5">概要</h2>
+            <p>これまでの制作で作成したjavaScriptやCSSのデザインパッケージをまとめています。</p>
+            <h3 class="mt-5">Category</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Label</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Components</th>
+                  <td>コンテンツ単位のデザイン</td>
+                </tr>
+                <tr>
+                  <th>Images</th>
+                  <td>画像をメインとしたデザイン</td>
+                </tr>
+                <tr>
+                  <th>Text</th>
+                  <td>テキストをメインとしたデザイン</td>
+                </tr>
+                <tr>
+                  <th>Animation</th>
+                  <td>コンテンツにアニメーションを追加</td>
+                </tr>
+                <tr>
+                  <th>SVG</th>
+                  <td><code>SVG</code>タグを使用したデザインアニメーション等</td>
+                </tr>
+                <tr>
+                  <th>Helper</th>
+                  <td>直接画面に描画されない部分</td>
+                </tr>
+                <tr>
+                  <th>Class</th>
+                  <td>コンテンツに特定の条件で<code>class</code>属性を付与する</td>
+                </tr>
+                <tr>
+                  <th>Composite</th>
+                  <td>複数の<code>Component</code>をかけ合わせたデザイン</td>
+                </tr>
+                <tr>
+                  <th>Package</th>
+                  <td>外部のプラグインを付け加えたデザインやアニメーション等</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <my-footer></my-footer>
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- <script src="./_assets/plugin/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script> -->
+
+    <!-- Optional JavaScript;-->
+    <script src="./js/documents.js"></script>
+  </body>
+</html>

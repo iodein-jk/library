@@ -1,0 +1,57 @@
+// Doi
+.accordion {
+      
+  @at-root {
+    .accordion-item {
+      border: solid 1px #dee2e6;
+
+      &:not(:first-child) {
+        margin-top: -1px;
+      }
+    }
+
+    .accordion-team {
+      position: relative;
+
+      &::after {
+        border-bottom: solid 1px #dee2e6;
+        content: "";
+        display: block;
+        height: 0;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+      }      
+    }
+
+    .accordion-button {
+      background-color: white;
+      border: none;
+      cursor: pointer;
+      display: block;
+      font-size: 1em;
+      padding: 1em 1.25em;
+      text-align: left;
+      width: 100%;
+    }
+
+    .accordion-description {
+      background-color: white;
+      box-sizing: border-box;
+      overflow: hidden;
+      max-height: 0;
+      padding-left: 1.25em;
+      padding-right: 1.25em;
+      transition: 
+        max-height 0.4s,
+        padding 0.4s;
+
+      &._open {
+        max-height: 100vh;
+        padding-top: 1em;
+        padding-bottom: 1em;
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+.mouseStoker{background-color:red;border-radius:50%;opacity:.5;height:40px;width:40px;transition:transform .2s;pointer-events:none;transform:scale(0);position:absolute;z-index:9988}.mouseStoker._active{transform:scale(1)}/*# sourceMappingURL=mouseStoker.css.map */

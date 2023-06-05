@@ -1,0 +1,26 @@
+// Shiozawa
+@use "sass:math";
+
+@function PxToRem($pixel) {
+  $rem: 1rem;
+  $unit: math.is-unitless($pixel);
+
+  @if $unit {
+    $rem: math.div($pixel, 16) + rem;
+  } @else {
+    $rem: math.div($pixel, 16px) + rem;
+  }
+  @return $rem;
+}
+
+@function RemToEm($rem) {
+  $em: 1em;
+  $unit: math.is-unitless($rem);
+
+  @if $unit {
+    $em: $rem + em;
+  } @else {
+    $em: math.div($rem, 1rem) + em;
+  }
+  @return $em;
+}

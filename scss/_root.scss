@@ -1,0 +1,28 @@
+// Shiozawa
+@use "variables" as *;
+
+:root {
+  --base-1: #{$base-1};
+  @each $key, $color in $base-1-colorMap {
+    --base-1-#{$key}: #{$color};
+  }
+  @each $key, $color in $base-1-alpha {
+    --base-1-alpha-#{$key}: #{$color};
+  }
+
+  --main-1: #{$main-1};
+  @each $key, $color in $main-1-colorMap {
+    --main-1-#{$key}: #{$color};
+  }
+  @each $key, $color in $main-1-alpha {
+    --main-1-alpha-#{$key}: #{$color};
+  }
+
+  --accent-1: #{$accent-1};
+  @each $key, $color in $accent-1-colorMap {
+    --accent-1-#{$key}: #{$color};
+  }
+  @each $key, $color in $accent-1-alpha {
+    --accent-1-alpha-#{$key}: #{$color};
+  }
+}
