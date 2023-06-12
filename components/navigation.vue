@@ -73,8 +73,8 @@
 
       <div class="collapse">
         <ul class="sideNavChild">
-          <li><a class="sideNavChild-anchor" href="Viewport.html">Viewport</a></li>
-          <li><a class="sideNavChild-anchor" href="Cookie.html">Cookie</a></li>
+          <li><a class="sideNavChild-anchor" href="viewport.html">Viewport</a></li>
+          <li><a class="sideNavChild-anchor" href="cookie.html">Cookie</a></li>
         </ul>
       </div>
     </li>
