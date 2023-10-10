@@ -32,7 +32,7 @@ pre[class*='language-'] {
 .l-document {
   display: grid;
   grid-template-areas: "article toc";
-  grid-template-columns: minmax(1000px, 4fr) 1fr;
+  grid-template-columns: 1fr 280px;
   grid-template-rows: auto;
 
   &-article {
@@ -71,7 +71,7 @@ pre[class*='language-'] {
 }
 
 .docSidebar {
-  height: 100svh;
+  height: 100vh;
   overflow: auto;
   padding: 2em;
   position: fixed;
