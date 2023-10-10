@@ -110,8 +110,8 @@
       <div class="collapse">
         <ul class="sideNavChild">
           <li><a class="sideNavChild-anchor" href="textAnime.html">[ gsap ] textAnime</a></li>
-          <li><a class="sideNavChild-anchor" href="swiperTab.html">[ swiper ] Tab</a></li>
-          <li><a class="sideNavChild-anchor" href="swiperScroll.html">[ swiper ] Scroll</a></li>
+          <!-- <li><a class="sideNavChild-anchor" href="swiperTab.html">[ swiper ] Tab</a></li>
+          <li><a class="sideNavChild-anchor" href="swiperScroll.html">[ swiper ] Scroll</a></li> -->
         </ul>
       </div>
     </li>
