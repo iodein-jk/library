@@ -53,6 +53,7 @@
               <button class="btn btn-lg btn-primary" type="button" data-toggle="modal" data-target="#modal_sample_2">モーダル2</button>
               <!-- .modal -->
               <div class="modal" id="modal_sample" aria-hidden="true">
+                <div class="modal-curtain" data-dismiss="#modal_sample"></div>
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -75,6 +76,7 @@
 
               <!-- .modal -->
               <div class="modal" id="modal_sample_2" aria-hidden="true">
+                <div class="modal-curtain" data-dismiss="#modal_sample_2"></div>
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -93,7 +95,7 @@
             <div class="demo">
               <!-- .modal -->
               <div class="modal" style="display: block; position: static;">
-                <div class="modal-dialog">
+                <div class="modal-dialog" style="z-index: 1;">
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="modal-close">×</button>
