@@ -1,6 +1,6 @@
 import { cookie } from "./module/cookie.js"
 import { modal } from "./module/modal.js"
-let counter = cookie(120)
+let counter = cookie(1, "/firstTimeOnly.html")
 
 window.addEventListener("DOMContentLoaded", function(){
   document.getElementById('cookieText').textContent = counter

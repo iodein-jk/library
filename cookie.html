@@ -52,12 +52,35 @@
             <div class="demo">
               <p><span id="cookieText"></span>回目の訪問です</p>
             </div>
+            <pre><code class="language-javascript">cookie(day, path)</code></pre>
             <pre><code class="language-javascript">import { cookie } from "./module/cookie.js"
-let counter = cookie(120)
+let counter = cookie(1, "/firstTimeOnly.html")
 
 window.addEventListener("DOMContentLoaded", function(){
   document.getElementById('cookieText').textContent = counter
 })</code></pre>
+
+            <table class="table mt-5">
+              <thead>
+                <tr>
+                  <th>Augment</th>
+                  <th>Description</th>
+                  <th class="text-center">Default</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>day</code></td>
+                  <td>保存するクッキーの日数</td>
+                  <td class="text-center"><code>60</code></td>
+                </tr>
+                <tr>
+                  <td><code>path</code></td>
+                  <td>クッキーを保存するパス</td>
+                  <td class="text-center"><code>/</code></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

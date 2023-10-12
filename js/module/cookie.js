@@ -1,4 +1,4 @@
-const cookie = (day = 60) => {
+const cookie = (day = 60, path = "/") => {
   let cookie,
       cookieStart,
       cookieEnd,
@@ -16,7 +16,7 @@ const cookie = (day = 60) => {
     cookieStart = cookie.indexOf("counts=", 0)
 
     if(cookieStart == -1) {
-      document.cookie = "counts=1;expires="+date_2;
+      document.cookie = "counts=1; path="+path+"; expires="+date_2;
       cookieCurent = 1
       // console.log("初回訪問")
       return cookieCurent
@@ -28,7 +28,7 @@ const cookie = (day = 60) => {
       try {
         cookieCount = parseInt(cookieCount)+1
         // console.log(cookieCount+"回目")
-        document.cookie = "counts="+cookieCount+";expires="+date_2
+        document.cookie = "counts="+cookieCount+";  path="+path+";  ;expires="+date_2
         cookieCurent = cookieCount
 
         return cookieCurent
